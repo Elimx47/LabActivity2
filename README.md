@@ -73,3 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 "# LabActivity2" 
 "# ITELEC2C-LabAct2" 
 "# ITELEC2C-LabAct2" 
+"# LabActivity2" 
