@@ -1,0 +1,9 @@
+.breadcrumb.bread {
+  text-decoration: none;
+  margin-bottom: 0;
+  background: none;
+}
+
+.breadcrumb.bread .breadcrumb-item {
+  color: inherit;
+}

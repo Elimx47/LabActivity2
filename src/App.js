@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavCisco from "./NavCisco";
+import Page from "./Page";
+import Banner from "./Banner";
+import Filter from "./Filter";
+import Courses from "./courses";
+import { courseData } from "./data";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavCisco></NavCisco>
+      <div className="pages">
+        <Page></Page>
+      </div>
+      <Banner></Banner>
+      <Filter></Filter>
+      <div className="courses-container">
+        {courseData.map((course) => (
+          <Courses courseObj={course} key={course.title} />
+        ))}
+      </div>
     </div>
   );
 }
