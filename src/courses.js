@@ -1,4 +1,26 @@
 function courses(props) {
+  let difficultyBadges = null;
+  if (props.courseObj.difficulty) {
+    if (props.courseObj.difficulty === "Beginning") {
+      difficultyBadges = (
+        <span className="badge rounded-pill bg-primary">
+          {props.courseObj.difficulty}
+        </span>
+      );
+    } else if (props.courseObj.difficulty === "Intermediate") {
+      difficultyBadges = (
+        <span className="badge rounded-pill bg-success">
+          {props.courseObj.difficulty}
+        </span>
+      );
+    } else {
+      difficultyBadges = (
+        <span className="badge rounded-pill bg-danger">
+          {props.courseObj.difficulty}
+        </span>
+      );
+    }
+  }
   return (
     <div className="container my-3">
       <div className="d-flex justify-content-center">
@@ -21,27 +43,7 @@ function courses(props) {
                 <h5 class="card-title">{props.courseObj.title}</h5>
                 <p class="card-text">{props.courseObj.description}</p>
                 <p class="card-text">
-                  <small class="text-body-secondary">
-                    {props.courseObj.difficulty && (
-                      <span>
-                        {props.courseObj.difficulty === "Beginning" && (
-                          <span className="badge rounded-pill bg-primary">
-                            {props.courseObj.difficulty}
-                          </span>
-                        )}
-                        {props.courseObj.difficulty === "Intermediate" && (
-                          <span className="badge rounded-pill bg-success">
-                            {props.courseObj.difficulty}
-                          </span>
-                        )}
-                        {props.courseObj.difficulty === "Advanced" && (
-                          <span className="badge rounded-pill bg-danger">
-                            {props.courseObj.difficulty}
-                          </span>
-                        )}
-                      </span>
-                    )}
-                  </small>
+                  <small class="text-body-secondary">{difficultyBadges}</small>
                 </p>
               </div>
               <div className="d-flex justify-content-end">

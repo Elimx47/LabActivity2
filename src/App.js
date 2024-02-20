@@ -8,6 +8,7 @@ import Courses from "./courses";
 import { courseData } from "./data";
 
 function App() {
+  const mode = "Instructor-led";
   return (
     <div>
       <NavCisco></NavCisco>
@@ -17,9 +18,11 @@ function App() {
       <Banner></Banner>
       <Filter></Filter>
       <div className="courses-container">
-        {courseData.map((course) => (
-          <Courses courseObj={course} key={course.title} />
-        ))}
+        {courseData.map((course) =>
+          course.mode === mode ? (
+            <Courses courseObj={course} key={course.title} />
+          ) : null,
+        )}
       </div>
     </div>
   );
