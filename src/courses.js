@@ -1,4 +1,4 @@
-function courses(data) {
+function courses(props) {
   return (
     <div className="container my-3">
       <div className="d-flex justify-content-center">
@@ -6,7 +6,7 @@ function courses(data) {
           <div class="row g-0">
             <div className="col-md-3" style={{ margin: 0, padding: 0 }}>
               <img
-                src={data.courseObj.photoName}
+                src={props.courseObj.photoName}
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 alt="coursepic"
               />
@@ -15,14 +15,32 @@ function courses(data) {
               <div class="card-body">
                 <p class="card-text">
                   <small class="text-body-secondary">
-                    {data.courseObj.mode}
+                    {props.courseObj.mode}
                   </small>
                 </p>
-                <h5 class="card-title">{data.courseObj.title}</h5>
-                <p class="card-text">{data.courseObj.description}</p>
+                <h5 class="card-title">{props.courseObj.title}</h5>
+                <p class="card-text">{props.courseObj.description}</p>
                 <p class="card-text">
                   <small class="text-body-secondary">
-                    {data.courseObj.difficulty}
+                    {props.courseObj.difficulty && (
+                      <span>
+                        {props.courseObj.difficulty === "Beginning" && (
+                          <span className="badge rounded-pill bg-primary">
+                            {props.courseObj.difficulty}
+                          </span>
+                        )}
+                        {props.courseObj.difficulty === "Intermediate" && (
+                          <span className="badge rounded-pill bg-success">
+                            {props.courseObj.difficulty}
+                          </span>
+                        )}
+                        {props.courseObj.difficulty === "Advanced" && (
+                          <span className="badge rounded-pill bg-danger">
+                            {props.courseObj.difficulty}
+                          </span>
+                        )}
+                      </span>
+                    )}
                   </small>
                 </p>
               </div>

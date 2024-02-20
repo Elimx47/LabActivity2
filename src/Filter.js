@@ -41,9 +41,10 @@ function Filter() {
           Skill Level - All
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Beginning</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Intermediate</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Advanced</Dropdown.Item>
+          <Dropdown.Item href="#/action-1">Skill Level - All</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Beginning</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Intermediate</Dropdown.Item>
+          <Dropdown.Item href="#/action-4">Advanced</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       <Dropdown inline style={{ marginLeft: "10px" }}>
